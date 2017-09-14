@@ -15,7 +15,7 @@ class DashboardPage extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-4 col-md-offset-4">
+        <div className="col-md-6 col-md-offset-2 custyle">
           <PeoplesList peoples={this.props.peoples} />
         </div>
       </div>
