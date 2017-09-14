@@ -7,7 +7,7 @@ MI-C3 Technical Test
 git clone https://github.com/maxifjaved/mi-c3.git
 cd mi-c3/
 npm install
-npm start
+npm run server
 open http://localhost:3000
 ```
 
@@ -16,8 +16,18 @@ open http://localhost:3000
 ```
 npm run lint
 ```
-### data table link
+
+## CSS Links
+
+
+### Data Table Link
 
 ```
 https://bootsnipp.com/snippets/featured/striped-table-30
+```
+
+### Pagination Link
+
+```
+https://bootsnipp.com/snippets/featured/rounded-pagination
 ```

@@ -8,9 +8,10 @@ export function setPeoplesList(peoples) {
   };
 }
 
-export function getPeoplesList() {
+export function getPeoplesList(page) {
+  page = page || 1;
   return dispatch => {
-    return axios.get('http://swapi.co/api/people/').then(res => {
+    return axios.get(`http://swapi.co/api/people/?page=${page}`).then(res => {
       dispatch(setPeoplesList(res.data));
     });
   }

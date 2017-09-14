@@ -13,7 +13,7 @@ class PeoplesList extends Component {
           mass={p.mass}
           created={p.created}
           edited={p.edited}
-          planet={p.planet}
+          planet={p.homeworld}
         />
       })
     }
@@ -27,7 +27,7 @@ class PeoplesList extends Component {
                 <th>Mass</th>
                 <th>Created</th>
                 <th>Edited</th>
-                <th className="text-center">Planet (link)</th>
+                <th>Planet</th>
               </tr>
             </thead>
             <tbody>

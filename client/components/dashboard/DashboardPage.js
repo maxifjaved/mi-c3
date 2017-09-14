@@ -3,13 +3,19 @@ import { connect } from 'react-redux';
 import { getPeoplesList } from '../../actions/peoples';
 
 import PeoplesList from './PeoplesList';
+import Paging from '../common/Paging';
 
 class DashboardPage extends Component {
   constructor(params) {
     super(params);
+    this.changePage = this.changePage.bind(this)
   }
   componentDidMount() {
     this.props.getPeoplesList();
+  }
+
+  changePage(number){
+      this.props.getPeoplesList(number);
   }
   
   render() {
@@ -17,6 +23,7 @@ class DashboardPage extends Component {
       <div className="row">
         <div className="col-md-6 col-md-offset-2 custyle">
           <PeoplesList peoples={this.props.peoples} />
+          <Paging peoples={this.props.peoples} changePage={this.changePage}/>
         </div>
       </div>
     );
