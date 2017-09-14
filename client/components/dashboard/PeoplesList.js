@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class UsersList extends Component {
+class PeoplesList extends Component {
   render() {
     return (<div>
        <h1>change the file in client or server folder !!</h1>
@@ -9,8 +9,8 @@ class UsersList extends Component {
   }
 }
 
-UsersList.propTypes = {
-    users: React.PropTypes.array.isRequired
-  }
+PeoplesList.propTypes = {
+  peoples: React.PropTypes.object.isRequired
+}
 
-export default UsersList;
+export default PeoplesList;

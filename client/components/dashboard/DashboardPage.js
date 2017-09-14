@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getUsersList } from '../../actions/users';
+import { getPeoplesList } from '../../actions/peoples';
 
-import UsersList from './UsersList';
+import PeoplesList from './PeoplesList';
 
 class DashboardPage extends Component {
   constructor(params) {
     super(params);
   }
   componentDidMount() {
-    this.props.getUsersList();
+    this.props.getPeoplesList();
   }
   
   render() {
     return (
       <div className="row">
         <div className="col-md-4 col-md-offset-4">
-          <UsersList users={this.props.users} />
+          <PeoplesList peoples={this.props.peoples} />
         </div>
       </div>
     );
   }
 }
 DashboardPage.propTypes = {
-  users: React.PropTypes.array.isRequired,
-  getUsersList: React.PropTypes.func.isRequired
+  peoples: React.PropTypes.object.isRequired,
+  getPeoplesList: React.PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
   return {
-    users: state.users
+    peoples: state.peoples
   }
 }
 
-export default connect(mapStateToProps, { getUsersList })(DashboardPage);
+export default connect(mapStateToProps, { getPeoplesList })(DashboardPage);

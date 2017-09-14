@@ -1,1 +1,1 @@
-export const SET_USERS_LIST = 'SET_USERS_LIST';
+export const SET_PEOPLES_DETAIL = 'SET_PEOPLES_DETAIL';
