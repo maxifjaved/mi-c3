@@ -21,7 +21,7 @@ class DashboardPage extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-6 col-md-offset-2 custyle">
+        <div className="col-md-12 custyle">
           <PeoplesList peoples={this.props.peoples} />
           <Paging peoples={this.props.peoples} changePage={this.changePage}/>
         </div>
