@@ -16,3 +16,11 @@ export function getPeoplesList(page) {
     });
   }
 }
+export function searchPeoples(value) {
+  value = value || '';
+  return dispatch => {
+    return axios.get(`http://swapi.co/api/people/?search=${value}`).then(res => {
+      dispatch(setPeoplesList(res.data));
+    });
+  }
+}
