@@ -20,6 +20,8 @@ class DashboardPage extends Component {
   }
 
   changePage(number){
+      if(this.state.search) return this.props.searchPeoples(this.state.search, number);
+
       this.props.getPeoplesList(number);
   }
   onChange(e){
