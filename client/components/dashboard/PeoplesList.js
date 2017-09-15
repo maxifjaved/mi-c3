@@ -14,6 +14,7 @@ class PeoplesList extends Component {
           created={p.created}
           edited={p.edited}
           planet={p.homeworld}
+          getPlanetDetail={this.props.getPlanetDetail}
         />
       })
     }
@@ -40,7 +41,8 @@ class PeoplesList extends Component {
 }
 
 PeoplesList.propTypes = {
-  peoples: React.PropTypes.object.isRequired
+  peoples: React.PropTypes.object.isRequired,
+  getPlanetDetail: React.PropTypes.object.isRequired
 }
 
 export default PeoplesList;

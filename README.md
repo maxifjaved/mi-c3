@@ -31,3 +31,9 @@ https://bootsnipp.com/snippets/featured/striped-table-30
 ```
 https://bootsnipp.com/snippets/featured/rounded-pagination
 ```
+
+### Modal Link
+
+```
+https://bootsnipp.com/snippets/featured/squarespace-like-modal
+```

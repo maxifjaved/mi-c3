@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import { getPeoplesList, searchPeoples } from '../../actions/peoples';
 
 import PeoplesList from './PeoplesList';
+import PlanetModal from './PlanetModal';
 import Paging from '../common/Paging';
 import TextFieldGroup from '../common/TextFieldGroup';
 
@@ -10,10 +12,12 @@ class DashboardPage extends Component {
   constructor(params) {
     super(params);
     this.state = {
-      search: ''
+      search: '',
+      planet: {}
     }
     this.onChange = this.onChange.bind(this)
     this.changePage = this.changePage.bind(this)
+    this.getPlanetDetail = this.getPlanetDetail.bind(this)
   }
   componentDidMount() {
     this.props.getPeoplesList();
@@ -24,6 +28,13 @@ class DashboardPage extends Component {
 
       this.props.getPeoplesList(number);
   }
+
+  getPlanetDetail(url){
+    this.setState({planet:{}});
+    axios.get(url).then(res => {
+      this.setState({planet: res.data});
+    })
+  }
   onChange(e){
      this.setState({[e.target.name]: e.target.value});
 
@@ -33,7 +44,9 @@ class DashboardPage extends Component {
   render() {
     return (
       <div className="row">
+      <PlanetModal planet={this.state.planet} />
         <div className="col-md-12 custyle">
+          
           <div  className="col-md-4 col-md-offset-8">
             <TextFieldGroup
               label='Enter To Search From People'
@@ -42,7 +55,7 @@ class DashboardPage extends Component {
               onChange={this.onChange}
             />
           </div>
-          <PeoplesList peoples={this.props.peoples} />
+          <PeoplesList peoples={this.props.peoples} getPlanetDetail={this.getPlanetDetail} />
           <Paging peoples={this.props.peoples} changePage={this.changePage}/>
         </div>
       </div>
