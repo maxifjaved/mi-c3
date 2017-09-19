@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PlanetTableRow from './dataTable/PlanetTableRow';
 
 class PlanetModal extends Component {
   render() {
